@@ -1,0 +1,14 @@
+<h2><%= @listing.title %></h2>
+<div class="price">
+  <h3>$<%= @listing.price %></h3>
+</div>
+<div class="address">
+  <%= @listing.address %>
+</div>
+<div class="body">
+  <%= simple_format @listing.body %>
+</div>
+
+<div class="actions">
+<%= link_to "Delete this Listing", listing_path(@listing), method: :delete, data: { confirm: "Are you sure?"} %>
+  </div>

@@ -1,0 +1,9 @@
+
+<br>
+<h3>New Listings</h3>
+
+<% @listings.each do |listing| %>
+  <div class="listings">
+    <%= link_to listing.title, listing_path(listing) %>
+  </div>
+<% end %>

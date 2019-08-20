@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Housing: Listings for Ithaca & Oswego</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+    <h1><%= link_to "Ithaca & Oswego Housing", root_path %></h1>
+    <h2><i>For all your small town needs!</i></h2>
+    <nav>
+        <%= link_to "Add a Listing", new_listing_path %>
+      </nav>
+      <hr>
+
+    </header>
+    <%= yield %>
+
+    <footer><br>Copyright 2019 Ithaca & Oswego Housing</footer>
+  </body>
+</html>
