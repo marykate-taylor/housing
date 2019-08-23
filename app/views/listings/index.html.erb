@@ -1,6 +1,12 @@
 
 <br>
 <h3>New Listings</h3>
+<nav class="filters">
+  <%= link_to "All Listings", root_path %>
+  <%= link_to "$", root_path(price: 500) %>
+<%= link_to "$$", root_path(price: 800) %>
+<%= link_to "$$$", root_path(price: 1200) %>
+  </nav>
 
 <% @listings.each do |listing| %>
   <div class="listings">

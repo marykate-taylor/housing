@@ -1,0 +1,27 @@
+<h3 Edit your listing </h3>
+
+<%= form_for @listing do |f| %>
+
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</p>
+
+<p>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+</p>
+
+<p>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+</p>
+
+<%= f.submit "Save Listing"%>
+
+<% end %>

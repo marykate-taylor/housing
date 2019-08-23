@@ -10,5 +10,6 @@
 </div>
 
 <div class="actions">
+  <%= link_to "Edit this Listing", edit_listing_path(@listing) %>
 <%= link_to "Delete this Listing", listing_path(@listing), method: :delete, data: { confirm: "Are you sure?"} %>
   </div>

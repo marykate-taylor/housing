@@ -2,7 +2,15 @@ class ListingsController < ApplicationController
 
   def index
     #all listings
-    @listings = Listing.all
+    @price = params[:price]
+    #is there a filter for price
+    if @price.present?
+      #filter by price
+      @listings = Listing.where(price: @price)
+    else
+      #all the reviews
+      @listings = Listing.all
+    end
   end
 
 
@@ -37,6 +45,25 @@ def destroy
 redirect_to root_path
 
 end
+
+def edit
+#find listing to edit
+@listing = Listing.find(params[:id])
+end
+
+def update
+#find listing
+@listing = Listing.find(params[:id])
+#update with new info
+@listing.update(params.require(:listing).permit(:title, :body, :address, :price))
+#redirect somewhere new
+redirect_to listing_path(@listing)
+end
+
+def form_params
+  params.require(:listing).permint(:title, :body, :address, :price)
+end
+
 
 
 
